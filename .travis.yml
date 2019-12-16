@@ -61,6 +61,7 @@ branches:
    - /^pkgtest-.*$/
    - /^prep-.*$/
    - bleed
+   - master
 
 # Notify developers when build passed/failed.
 notifications:
