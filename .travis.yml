@@ -1,6 +1,7 @@
 # Travis-CI Build for OpenRA
 # see travis-ci.org for details
 
+dist: trusty
 language: csharp
 mono: 4.6.1
 
@@ -25,6 +26,10 @@ addons:
     - genisoimage
     - fakeroot
     - zsync
+  sonarcloud: 
+    organization: "unimibsoftengcourse1920"
+    token: 
+        secure: $SONAR_TOKEN
 
 # Environment variables
 env:
@@ -42,6 +47,7 @@ script:
  - make check-scripts
  - make test
  - make nunit
+ - sonar-scanner
 
 # Automatically update the trait documentation and Lua API
 after_success:
